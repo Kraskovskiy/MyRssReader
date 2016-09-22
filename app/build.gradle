@@ -11,24 +11,13 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    signingConfigs {
-        apply from: "E:\\Android\\key\\release.gradle"
 
-        buildTypes {
-            release {
-                minifyEnabled true
-                shrinkResources true
-                signingConfig signingConfigs.release
-                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-                zipAlignEnabled true
-            }
-        }
-
-        android {
-            lintOptions {
-                checkReleaseBuilds true
-                abortOnError false
-            }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
         }
     }
 }
